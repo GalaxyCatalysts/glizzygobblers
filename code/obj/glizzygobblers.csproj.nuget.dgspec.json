@@ -26,8 +26,8 @@
         "frameworks": {
           "net50": {
             "projectReferences": {
-              "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\Addons\\base\\code\\base.csproj": {
-                "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\Addons\\base\\code\\base.csproj"
+              "D:\\Games\\steamapps\\common\\sbox\\Addons\\base\\code\\base.csproj": {
+                "projectPath": "D:\\Games\\steamapps\\common\\sbox\\Addons\\base\\code\\base.csproj"
               }
             }
           }
