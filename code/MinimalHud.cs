@@ -16,6 +16,7 @@ namespace MinimalExample
 			if ( IsClient )
 			{
 				RootPanel.SetTemplate( "/minimalhud.html" );
+
 			}
 		}
 	}
