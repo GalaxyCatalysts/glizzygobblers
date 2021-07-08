@@ -69,10 +69,6 @@ namespace MinimalExample
 
 		public override void StartTouch( Entity other )
 		{
-			if ( IsClient )
-			{
-				RootPanel.SetTemplate( "/glizzyd.html" );
-			}
 			base.Respawn();
 		}
 
