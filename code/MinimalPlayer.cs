@@ -63,7 +63,7 @@ namespace MinimalExample
 		public override void OnKilled()
 		{
 			base.OnKilled();
-
+			BecomeRagdollOnClient( Velocity, lastDamage.Flags, lastDamage.Position, lastDamage.Force, GetHitboxBone( lastDamage.HitboxIndex ) );
 			EnableDrawing = false;
 		}
 
