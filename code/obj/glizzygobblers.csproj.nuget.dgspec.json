@@ -1,0 +1,48 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\zoome\\Documents\\Projects\\glizzygobblers\\code\\glizzygobblers.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\zoome\\Documents\\Projects\\glizzygobblers\\code\\glizzygobblers.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\zoome\\Documents\\Projects\\glizzygobblers\\code\\glizzygobblers.csproj",
+        "projectName": "glizzygobblers",
+        "projectPath": "C:\\Users\\zoome\\Documents\\Projects\\glizzygobblers\\code\\glizzygobblers.csproj",
+        "packagesPath": "C:\\Users\\zoome\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\zoome\\Documents\\Projects\\glizzygobblers\\code\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\zoome\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Users\\zoome\\AppData\\Roaming\\Cosmos User Kit\\packages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net50": {
+            "projectReferences": {
+              "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\Addons\\base\\code\\base.csproj": {
+                "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\Addons\\base\\code\\base.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net50": {
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\3.1.410\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "rQ1p3iyWlVYvdbQd9w5DbE/wcunkv/J9lcEURysw0uyW4hkbFc63CAPLa6JtR9mLm9KNIywM24je8rQmJOEXIw==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\zoome\\Documents\\Projects\\glizzygobblers\\code\\glizzygobblers.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\Addons\\base\\code\\base.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\Addons\\base\\code\\base.csproj",
+      "targetGraphs": [
+        ".NETFramework,Version=v5.0"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v5.0": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v5.0": [
+      "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\Addons\\base\\code\\base.csproj"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\zoome\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\zoome\\Documents\\Projects\\glizzygobblers\\code\\glizzygobblers.csproj",
+      "projectName": "glizzygobblers",
+      "projectPath": "C:\\Users\\zoome\\Documents\\Projects\\glizzygobblers\\code\\glizzygobblers.csproj",
+      "packagesPath": "C:\\Users\\zoome\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\zoome\\Documents\\Projects\\glizzygobblers\\code\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\zoome\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0"
+      ],
+      "sources": {
+        "C:\\Users\\zoome\\AppData\\Roaming\\Cosmos User Kit\\packages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net50": {
+          "projectReferences": {
+            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\Addons\\base\\code\\base.csproj": {
+              "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\Addons\\base\\code\\base.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net50": {
+        "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\3.1.410\\RuntimeIdentifierGraph.json"
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\Addons\\base\\code\\base.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\Addons\\base\\code\\base.csproj",
+      "targetGraphs": [
+        ".NETFramework,Version=v5.0"
+      ]
+    }
+  ]
+}
