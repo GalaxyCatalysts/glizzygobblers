@@ -41,8 +41,7 @@ namespace MinimalExample
 			{
 				Log.Info( "My Gamemode Has Created Clientside!" );
 				//important debug message do not delete don't think about it
-				new MinimalHudEntity();
-				
+
 			}
 		}
 
@@ -51,7 +50,6 @@ namespace MinimalExample
 		/// </summary>
 		public override void ClientJoined( Client client )
 		{
-			new MinimalHudEntity();
 			Log.Info("who the fuck loaded in");
 			// TODO: play a awesome glizzy sound when someone joins PlaySound(JoinSound);
 			// past here please don't change stuff (from isaiah) =====
