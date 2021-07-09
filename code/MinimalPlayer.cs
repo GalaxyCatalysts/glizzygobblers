@@ -6,6 +6,7 @@ namespace MinimalExample
 {
 	partial class MinimalPlayer : Player
 	{
+		double food = 50.0;
 		public override void Respawn()
 		{
 			SetModel( "models/citizen/citizen.vmdl" );
@@ -60,6 +61,7 @@ namespace MinimalExample
 				ragdoll.PhysicsGroup.Velocity = EyeRot.Forward * 5000;
 				PlaySound( "fard" );
 			}
+			food = food - 0.01;
 		}
 
 
@@ -72,7 +74,9 @@ namespace MinimalExample
 
 		public override void StartTouch( Entity other )
 		{
-			base.Respawn();
+			//this is what happens when hit by a glizzy
+			food = food + 5.0;
+			//base.Respawn();
 		}
 
 	}
