@@ -57,7 +57,7 @@ namespace MinimalExample
 				ragdoll.Rotation = Rotation.LookAt( Vector3.Random.Normal );
 				ragdoll.SetupPhysicsFromModel( PhysicsMotionType.Dynamic, false );
 				ragdoll.PhysicsGroup.Velocity = EyeRot.Forward * 5000;
-				PlaySound( "rust_pistol.shoot" );
+				// TODO: fix this sound to work for server PlaySound( "rust_pistol.shoot" );
 			}
 		}
 
