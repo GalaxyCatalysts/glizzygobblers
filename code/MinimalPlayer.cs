@@ -49,19 +49,7 @@ namespace MinimalExample
 			//
 			// If we're running serverside and Attack1 was just pressed, spawn a ragdoll
 			//
-			/*
-			if ( IsServer || IsClient && Input.Pressed( InputButton.Attack1 ) )
-			{
-				var ragdoll = new ModelEntity();
-				ragdoll.SetModel( "models/citizen_props/hotdog01.vmdl" );  
-				ragdoll.Position = EyePos + EyeRot.Forward * 40;
-				ragdoll.Rotation = Rotation.LookAt( Vector3.Random.Normal );
-				ragdoll.SetupPhysicsFromModel( PhysicsMotionType.Dynamic, false );
-				ragdoll.PhysicsGroup.Velocity = EyeRot.Forward * 5000;
-				PlaySound( "fard" );
-			}
-			//Try to get this working between server and client without infinite hotdogs
-			*/
+			
 			if ( IsServer && Input.Pressed( InputButton.Attack1 ) )
 			{
 				var ragdoll = new ModelEntity();
@@ -73,6 +61,7 @@ namespace MinimalExample
 				PlaySound( "fard" );
 			}
 		}
+
 
 		public override void OnKilled()
 		{

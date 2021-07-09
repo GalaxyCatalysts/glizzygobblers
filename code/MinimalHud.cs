@@ -18,6 +18,7 @@ namespace MinimalExample
 				RootPanel.SetTemplate( "/minimalhud.html" );
 
 			}
+
 		}
 	}
 
