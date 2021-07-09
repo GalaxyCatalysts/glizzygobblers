@@ -41,7 +41,7 @@ namespace MinimalExample
 			{
 				Log.Info( "My Gamemode Has Created Clientside!" );
 				//important debug message do not delete don't think about it
-				
+				new MinimalHudEntity();
 				
 			}
 		}
