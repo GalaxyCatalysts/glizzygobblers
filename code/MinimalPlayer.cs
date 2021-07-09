@@ -6,7 +6,9 @@ namespace MinimalExample
 {
 	partial class MinimalPlayer : Player
 	{
-		double food = 50.0;
+		[Net, Local]
+		public double food { get; set; }= 50.0;
+		//double food = 50.0;
 		public override void Respawn()
 		{
 			SetModel( "models/citizen/citizen.vmdl" );
