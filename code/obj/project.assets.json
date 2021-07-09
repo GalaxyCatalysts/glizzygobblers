@@ -1,38 +1,57 @@
 {
   "version": 3,
   "targets": {
-    ".NETFramework,Version=v5.0": {}
+    "net5.0": {
+      "base/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/base.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/base.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "base/1.0.0": {
+      "type": "project",
+      "path": "../../base/code/base.csproj",
+      "msbuildProject": "../../base/code/base.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETFramework,Version=v5.0": [
-      "D:\\Games\\steamapps\\common\\sbox\\Addons\\base\\code\\base.csproj"
+    "net5.0": [
+      "base >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\zoome\\.nuget\\packages\\": {}
+    "C:\\Users\\Paul\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\zoome\\Documents\\Projects\\glizzygobblers\\code\\glizzygobblers.csproj",
+      "projectUniqueName": "D:\\Games\\steamapps\\common\\sbox\\Addons\\glizzygobblers\\code\\glizzygobblers.csproj",
       "projectName": "glizzygobblers",
-      "projectPath": "C:\\Users\\zoome\\Documents\\Projects\\glizzygobblers\\code\\glizzygobblers.csproj",
-      "packagesPath": "C:\\Users\\zoome\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\zoome\\Documents\\Projects\\glizzygobblers\\code\\obj\\",
+      "projectPath": "D:\\Games\\steamapps\\common\\sbox\\Addons\\glizzygobblers\\code\\glizzygobblers.csproj",
+      "packagesPath": "C:\\Users\\Paul\\.nuget\\packages\\",
+      "outputPath": "D:\\Games\\steamapps\\common\\sbox\\Addons\\glizzygobblers\\code\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\zoome\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Paul\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Users\\zoome\\AppData\\Roaming\\Cosmos User Kit\\packages\\": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net50": {
+        "net5.0": {
+          "targetAlias": "net5.0",
           "projectReferences": {
             "D:\\Games\\steamapps\\common\\sbox\\Addons\\base\\code\\base.csproj": {
               "projectPath": "D:\\Games\\steamapps\\common\\sbox\\Addons\\base\\code\\base.csproj"
@@ -47,20 +66,25 @@
       }
     },
     "frameworks": {
-      "net50": {
-        "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\3.1.410\\RuntimeIdentifierGraph.json"
+      "net5.0": {
+        "targetAlias": "net5.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'D:\\Games\\steamapps\\common\\sbox\\Addons\\base\\code\\base.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "D:\\Games\\steamapps\\common\\sbox\\Addons\\base\\code\\base.csproj",
-      "targetGraphs": [
-        ".NETFramework,Version=v5.0"
-      ]
-    }
-  ]
+  }
 }

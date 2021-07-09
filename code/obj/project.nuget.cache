@@ -1,18 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XA8FlHDSd2sOHXsTkp2EYcwfUaOh6dqZs3cg8jC6LQ8ALCwzm8gdRNhfAQrmX2n/mi9Qjt1lAOv8tjOJ13/WhA==",
-  "success": false,
-  "projectFilePath": "C:\\Users\\zoome\\Documents\\Projects\\glizzygobblers\\code\\glizzygobblers.csproj",
+  "dgSpecHash": "mLBirWeIjUjmzjO1SgyVvuNNJam2XZCYbRvfnmNHB0EJISkP5vnFcu6pX867nHVHrEw+OdEWVkAhwFSiiwPlIQ==",
+  "success": true,
+  "projectFilePath": "D:\\Games\\steamapps\\common\\sbox\\Addons\\glizzygobblers\\code\\glizzygobblers.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'D:\\Games\\steamapps\\common\\sbox\\Addons\\base\\code\\base.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "D:\\Games\\steamapps\\common\\sbox\\Addons\\base\\code\\base.csproj",
-      "targetGraphs": [
-        ".NETFramework,Version=v5.0"
-      ]
-    }
-  ]
+  "logs": []
 }
