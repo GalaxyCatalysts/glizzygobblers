@@ -65,7 +65,7 @@ namespace MinimalExample
 			if ( IsServer && Input.Pressed( InputButton.Attack1 ) )
 			{
 				var ragdoll = new ModelEntity();
-				ragdoll.SetModel( "models/citizen_props/hotdog01.vmdl" );  
+				ragdoll.SetModel( "models/glizzy.vmdl" );  
 				ragdoll.Position = EyePos + EyeRot.Forward * 40;
 				ragdoll.Rotation = Rotation.LookAt( Vector3.Random.Normal );
 				ragdoll.SetupPhysicsFromModel( PhysicsMotionType.Dynamic, false );
