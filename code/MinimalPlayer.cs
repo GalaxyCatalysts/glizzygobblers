@@ -49,7 +49,7 @@ namespace MinimalExample
 			//
 			// If we're running serverside and Attack1 was just pressed, spawn a ragdoll
 			//
-			if ( IsServer && Input.Pressed( InputButton.Attack1 ) )
+			if ( IsServer || IsClient && Input.Pressed( InputButton.Attack1 ) )
 			{
 				var ragdoll = new ModelEntity();
 				ragdoll.SetModel( "models/citizen_props/hotdog01.vmdl" );  
@@ -57,7 +57,7 @@ namespace MinimalExample
 				ragdoll.Rotation = Rotation.LookAt( Vector3.Random.Normal );
 				ragdoll.SetupPhysicsFromModel( PhysicsMotionType.Dynamic, false );
 				ragdoll.PhysicsGroup.Velocity = EyeRot.Forward * 5000;
-				// TODO: fix this sound to work for server PlaySound( "rust_pistol.shoot" );
+				PlaySound( "fard" );
 			}
 		}
 
