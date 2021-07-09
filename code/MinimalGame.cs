@@ -51,7 +51,7 @@ namespace MinimalExample
 		public override void ClientJoined( Client client )
 		{
 			Log.Info("who the fuck loaded in");
-			// TODO: play a awesome glizzy sound when someone joins PlaySound(JoinSound);
+			PlaySound( "glizzy" );
 			// past here please don't change stuff (from isaiah) =====
 			base.ClientJoined( client );
 
