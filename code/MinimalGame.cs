@@ -51,6 +51,7 @@ namespace MinimalExample
 		/// </summary>
 		public override void ClientJoined( Client client )
 		{
+			new MinimalHudEntity();
 			Log.Info("who the fuck loaded in");
 			// TODO: play a awesome glizzy sound when someone joins PlaySound(JoinSound);
 			// past here please don't change stuff (from isaiah) =====
