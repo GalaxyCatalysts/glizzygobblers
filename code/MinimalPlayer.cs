@@ -78,7 +78,7 @@ namespace MinimalExample
 				IsAlive = false;
 			}
 
-			food = food - 0.01;
+			food = food - 0.05;
 		}
 
 
