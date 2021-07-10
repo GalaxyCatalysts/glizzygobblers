@@ -60,6 +60,8 @@ namespace MinimalExample
 
 			player.Respawn();
 		}
+
+		public int RoundTime = 120;
 	}
 
 }

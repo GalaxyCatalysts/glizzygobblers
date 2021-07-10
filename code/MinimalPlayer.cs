@@ -7,12 +7,15 @@ namespace MinimalExample
 	partial class MinimalPlayer : Player
 	{
 		[Net, Local]
-		public double food { get; set; }= 50.0;
+		public double food { get; set; } = 50.0;
+		[Net, Local]
+		public double consumptionRate {get; set; } = 0.05;
 		//double food = 50.0;
 		public bool IsAlive = true;
 		public override void Respawn()
 		{
 			IsAlive = true;
+			food = 50;
 			
 			SetModel( "models/citizen/citizen.vmdl" );
 
@@ -75,18 +78,22 @@ namespace MinimalExample
 
 			if ( food <= 0 || food >= 100 )
 			{
-				base.OnKilled();
+				if ( IsServer && IsAlive )
+				{
+					base.OnKilled();
 
-				EnableDrawing = false;
+					EnableDrawing = false;
 
-				food = 50;
+					//food = 50;
 
-				IsAlive = false;
+					IsAlive = false;
 
-				PlaySound( "death" );
+					PlaySound( "death" );
+				}
+				
 			}
 
-			food = food - 0.05;
+			food = food - consumptionRate;
 		}
 
 
