@@ -55,8 +55,9 @@ namespace MinimalExample
 			//
 			// If we're running serverside and Attack1 was just pressed, spawn a ragdoll
 			//
-			if (IsAlive) {
-				if ( IsServer && Input.Pressed( InputButton.Attack1 ) && IsAlive == true )
+			if (IsAlive == true) 
+			{
+				if ( IsServer && Input.Pressed( InputButton.Attack1 ) )
 				{
 					var ragdoll = new ModelEntity();
 					ragdoll.SetModel( "models/glizzy.vmdl" );  
