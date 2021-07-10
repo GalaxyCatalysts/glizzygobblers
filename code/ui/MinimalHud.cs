@@ -17,7 +17,7 @@ namespace MinimalExample
 			{
 				RootPanel.SetTemplate( "/ui/minimalhud.html" );
 				RootPanel.AddChild<FoodMeter>();
-
+				RootPanel.AddChild<RoundTime>();
 			}
 
 		}

@@ -7,10 +7,16 @@ namespace MinimalExample
 	partial class MinimalPlayer : Player
 	{
 		[Net, Local]
-		public double food { get; set; }= 50.0;
+		public double food { get; set; } = 50.0;
+		[Net, Local]
+		public double consumptionRate {get; set; } = 0.05;
 		//double food = 50.0;
+		public bool IsAlive = true;
 		public override void Respawn()
 		{
+			IsAlive = true;
+			food = 50;
+			
 			SetModel( "models/citizen/citizen.vmdl" );
 
 			//
@@ -52,18 +58,47 @@ namespace MinimalExample
 			//
 			// If we're running serverside and Attack1 was just pressed, spawn a ragdoll
 			//
-			
-			if ( IsServer && Input.Pressed( InputButton.Attack1 ) )
+			if (IsAlive == true) 
 			{
-				var ragdoll = new ModelEntity();
-				ragdoll.SetModel( "models/glizzy.vmdl" );  
-				ragdoll.Position = EyePos + EyeRot.Forward * 40;
-				ragdoll.Rotation = Rotation.LookAt( Vector3.Random.Normal );
-				ragdoll.SetupPhysicsFromModel( PhysicsMotionType.Dynamic, false );
-				ragdoll.PhysicsGroup.Velocity = EyeRot.Forward * 5000;
-				PlaySound( "fard" );
+				if ( IsServer && Input.Pressed( InputButton.Attack1 ) )
+				{
+					var ragdoll = new ModelEntity();
+					ragdoll.SetModel( "models/glizzy.vmdl" );  
+					ragdoll.Position = EyePos + EyeRot.Forward * 40;
+					ragdoll.Rotation = Rotation.LookAt( Vector3.Random.Normal );
+					ragdoll.SetupPhysicsFromModel( PhysicsMotionType.Dynamic, false );
+					ragdoll.PhysicsGroup.Velocity = EyeRot.Forward * 5000;
+					PlaySound( "fard" );
+				}
+				else if (Input.Pressed( InputButton.Attack1 ) && IsAlive == true){
+					PlaySound( "fard" );
+				}
 			}
-			food = food - 0.01;
+			
+
+			if ( food <= 0 || food >= 100 )
+			{
+				if ( IsServer && IsAlive )
+				{
+					if (food >= 100){food = 100;}
+					
+					base.OnKilled();
+
+					EnableDrawing = false;
+
+					//food = 50;
+
+					IsAlive = false;
+
+					PlaySound( "death" );
+				}
+				
+			}
+			else
+			{
+				food = food - consumptionRate;
+			}
+			
 		}
 
 
@@ -72,6 +107,10 @@ namespace MinimalExample
 			base.OnKilled();
 			//BecomeRagdollOnClient( Velocity, lastDamage.Flags, lastDamage.Position, lastDamage.Force, GetHitboxBone( lastDamage.HitboxIndex ) );
 			EnableDrawing = false;
+			
+			IsAlive = false;
+			
+			food = 50;
 		}
 
 		public override void StartTouch( Entity other )
@@ -79,6 +118,8 @@ namespace MinimalExample
 			//this is what happens when hit by a glizzy
 			food = food + 5.0;
 			//base.Respawn();
+			other.Delete();
+			PlaySound( "amongus" );
 		}
 
 	}

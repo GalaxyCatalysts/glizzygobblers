@@ -18,9 +18,7 @@ namespace MinimalExample {
 	    {
             var player = Local.Pawn as MinimalPlayer;
             if ( player == null ) return;
-
             Label.Text = $"{player.food = (int) player.food}";
-            //Label.Text = "sex";
 	    }
     }
 }
