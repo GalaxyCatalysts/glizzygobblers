@@ -73,6 +73,8 @@ namespace MinimalExample
 			base.OnKilled();
 			//BecomeRagdollOnClient( Velocity, lastDamage.Flags, lastDamage.Position, lastDamage.Force, GetHitboxBone( lastDamage.HitboxIndex ) );
 			EnableDrawing = false;
+
+			food = 50;
 		}
 
 		public override void StartTouch( Entity other )
@@ -82,6 +84,8 @@ namespace MinimalExample
 				base.OnKilled();
 
 				EnableDrawing = false;
+
+				food = 50;
 			}
 			//this is what happens when hit by a glizzy
 			food = food + 5.0;
