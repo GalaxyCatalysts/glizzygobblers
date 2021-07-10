@@ -58,15 +58,15 @@ namespace MinimalExample
 			if (IsAlive) {
 				if ( IsServer && Input.Pressed( InputButton.Attack1 ) && IsAlive == true )
 				{
-				var ragdoll = new ModelEntity();
-				ragdoll.SetModel( "models/glizzy.vmdl" );  
-				ragdoll.Position = EyePos + EyeRot.Forward * 40;
-				ragdoll.Rotation = Rotation.LookAt( Vector3.Random.Normal );
-				ragdoll.SetupPhysicsFromModel( PhysicsMotionType.Dynamic, false );
-				ragdoll.PhysicsGroup.Velocity = EyeRot.Forward * 5000;
-				PlaySound( "fard" );
+					var ragdoll = new ModelEntity();
+					ragdoll.SetModel( "models/glizzy.vmdl" );  
+					ragdoll.Position = EyePos + EyeRot.Forward * 40;
+					ragdoll.Rotation = Rotation.LookAt( Vector3.Random.Normal );
+					ragdoll.SetupPhysicsFromModel( PhysicsMotionType.Dynamic, false );
+					ragdoll.PhysicsGroup.Velocity = EyeRot.Forward * 5000;
+					PlaySound( "fard" );
 				}
-				else if (Input.Pressed( InputButton.Attack1)){
+				else if (Input.Pressed( InputButton.Attack1 )){
 					PlaySound( "fard" );
 				}
 			}
