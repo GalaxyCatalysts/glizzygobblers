@@ -66,6 +66,9 @@ namespace MinimalExample
 				ragdoll.PhysicsGroup.Velocity = EyeRot.Forward * 5000;
 				PlaySound( "fard" );
 			}
+			else if (Input.Pressed( InputButton.Attack1)){
+				PlaySound( "fard" );
+			}
 			
 			if ( food <= 0 || food >= 100 )
 			{
