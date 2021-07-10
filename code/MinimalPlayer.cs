@@ -45,6 +45,7 @@ namespace MinimalExample
 		/// <summary>
 		/// Called every tick, clientside and serverside.
 		/// </summary>
+
 		public override void Simulate( Client cl )
 		{
 			base.Simulate( cl );
@@ -98,7 +99,6 @@ namespace MinimalExample
 			{
 				food = food - consumptionRate;
 			}
-			
 		}
 
 
