@@ -90,6 +90,7 @@ namespace MinimalExample
 			//this is what happens when hit by a glizzy
 			food = food + 5.0;
 			//base.Respawn();
+			other.Delete();
 		}
 
 	}
