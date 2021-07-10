@@ -80,6 +80,8 @@ namespace MinimalExample
 			{
 				if ( IsServer && IsAlive )
 				{
+					if (food >= 100){food = 100;}
+					
 					base.OnKilled();
 
 					EnableDrawing = false;
@@ -92,8 +94,11 @@ namespace MinimalExample
 				}
 				
 			}
-
-			food = food - consumptionRate;
+			else
+			{
+				food = food - consumptionRate;
+			}
+			
 		}
 
 
