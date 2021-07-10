@@ -66,6 +66,17 @@ namespace MinimalExample
 				ragdoll.PhysicsGroup.Velocity = EyeRot.Forward * 5000;
 				PlaySound( "fard" );
 			}
+			
+			if ( food <= 0 || food >= 100 )
+			{
+				base.OnKilled();
+
+				EnableDrawing = false;
+
+				food = 50;
+
+				IsAlive = false;
+			}
 
 			food = food - 0.01;
 		}
@@ -84,16 +95,6 @@ namespace MinimalExample
 
 		public override void StartTouch( Entity other )
 		{
-			if ( food <= 0 || food >= 100 )
-			{
-				base.OnKilled();
-
-				EnableDrawing = false;
-
-				food = 50;
-
-				IsAlive = false;
-			}
 			//this is what happens when hit by a glizzy
 			food = food + 5.0;
 			//base.Respawn();
