@@ -82,6 +82,8 @@ namespace MinimalExample
 				food = 50;
 
 				IsAlive = false;
+
+				PlaySound( "death" );
 			}
 
 			food = food - 0.05;
