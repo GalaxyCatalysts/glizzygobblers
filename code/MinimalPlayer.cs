@@ -63,6 +63,7 @@ namespace MinimalExample
 			{
 				if ( IsServer && Input.Pressed( InputButton.Attack1 ) )
 				{
+					//TODO: Add critical glizzy
 					var ragdoll = new ModelEntity();
 					ragdoll.SetModel( "models/glizzy.vmdl" );  
 					ragdoll.Position = EyePos + EyeRot.Forward * 40;
