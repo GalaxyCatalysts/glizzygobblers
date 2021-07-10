@@ -1,8 +1,7 @@
 using Sandbox;
 using Sandbox.UI;
 using Sandbox.UI.Construct;
-
-//using MinimalPlayer;
+using MinimalExample;
 
 namespace MinimalExample {
     public class FoodMeter : Panel {
@@ -16,12 +15,12 @@ namespace MinimalExample {
         }
 
         public override void Tick()
-        {
-	        var player = Local.Pawn;
-	        if ( player == null ) return;
+	    {
+            var player = Local.Pawn as MinimalPlayer;
+            if ( player == null ) return;
 
-	        //Label.Text = $"{player.food.CeilToInt()};
-	        Label.Text = "sex";
-        }
+            Label.Text = $"{player.food}";
+            //Label.Text = "sex";
+	    }
     }
 }
