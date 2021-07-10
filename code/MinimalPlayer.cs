@@ -9,8 +9,11 @@ namespace MinimalExample
 		[Net, Local]
 		public double food { get; set; }= 50.0;
 		//double food = 50.0;
+		public bool IsAlive = true;
 		public override void Respawn()
 		{
+			IsAlive = true;
+			
 			SetModel( "models/citizen/citizen.vmdl" );
 
 			//
@@ -53,7 +56,7 @@ namespace MinimalExample
 			// If we're running serverside and Attack1 was just pressed, spawn a ragdoll
 			//
 			
-			if ( IsServer && Input.Pressed( InputButton.Attack1 ) )
+			if ( IsServer && Input.Pressed( InputButton.Attack1 ) && IsAlive == true )
 			{
 				var ragdoll = new ModelEntity();
 				ragdoll.SetModel( "models/glizzy.vmdl" );  
@@ -76,7 +79,9 @@ namespace MinimalExample
 			base.OnKilled();
 			//BecomeRagdollOnClient( Velocity, lastDamage.Flags, lastDamage.Position, lastDamage.Force, GetHitboxBone( lastDamage.HitboxIndex ) );
 			EnableDrawing = false;
-
+			
+			IsAlive = false;
+			
 			food = 50;
 		}
 
@@ -89,6 +94,8 @@ namespace MinimalExample
 				EnableDrawing = false;
 
 				food = 50;
+
+				IsAlive = false;
 			}
 			//this is what happens when hit by a glizzy
 			food = food + 5.0;
