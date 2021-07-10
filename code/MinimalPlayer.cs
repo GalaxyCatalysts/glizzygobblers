@@ -91,6 +91,7 @@ namespace MinimalExample
 			food = food + 5.0;
 			//base.Respawn();
 			other.Delete();
+			PlaySound( "amongus" );
 		}
 
 	}
