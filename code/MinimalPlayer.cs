@@ -55,9 +55,9 @@ namespace MinimalExample
 			//
 			// If we're running serverside and Attack1 was just pressed, spawn a ragdoll
 			//
-			
-			if ( IsServer && Input.Pressed( InputButton.Attack1 ) && IsAlive == true )
-			{
+			if (IsAlive) {
+				if ( IsServer && Input.Pressed( InputButton.Attack1 ) && IsAlive == true )
+				{
 				var ragdoll = new ModelEntity();
 				ragdoll.SetModel( "models/glizzy.vmdl" );  
 				ragdoll.Position = EyePos + EyeRot.Forward * 40;
@@ -65,7 +65,12 @@ namespace MinimalExample
 				ragdoll.SetupPhysicsFromModel( PhysicsMotionType.Dynamic, false );
 				ragdoll.PhysicsGroup.Velocity = EyeRot.Forward * 5000;
 				PlaySound( "fard" );
+				}
+				else if (Input.Pressed( InputButton.Attack1)){
+					PlaySound( "fard" );
+				}
 			}
+			
 
 			if ( food <= 0 || food >= 100 )
 			{
