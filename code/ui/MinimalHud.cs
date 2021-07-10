@@ -15,9 +15,11 @@ namespace MinimalExample
 		{
 			if ( IsClient )
 			{
-				RootPanel.SetTemplate( "/minimalhud.html" );
+				RootPanel.SetTemplate( "/ui/minimalhud.html" );
+				RootPanel.AddChild<FoodMeter>();
 
 			}
+
 		}
 	}
 

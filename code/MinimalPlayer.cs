@@ -6,6 +6,9 @@ namespace MinimalExample
 {
 	partial class MinimalPlayer : Player
 	{
+		[Net, Local]
+		public double food { get; set; }= 50.0;
+		//double food = 50.0;
 		public override void Respawn()
 		{
 			SetModel( "models/citizen/citizen.vmdl" );
@@ -49,30 +52,20 @@ namespace MinimalExample
 			//
 			// If we're running serverside and Attack1 was just pressed, spawn a ragdoll
 			//
-			/*
-			if ( IsServer || IsClient && Input.Pressed( InputButton.Attack1 ) )
-			{
-				var ragdoll = new ModelEntity();
-				ragdoll.SetModel( "models/citizen_props/hotdog01.vmdl" );  
-				ragdoll.Position = EyePos + EyeRot.Forward * 40;
-				ragdoll.Rotation = Rotation.LookAt( Vector3.Random.Normal );
-				ragdoll.SetupPhysicsFromModel( PhysicsMotionType.Dynamic, false );
-				ragdoll.PhysicsGroup.Velocity = EyeRot.Forward * 5000;
-				PlaySound( "fard" );
-			}
-			//Try to get this working between server and client without infinite hotdogs
-			*/
+			
 			if ( IsServer && Input.Pressed( InputButton.Attack1 ) )
 			{
 				var ragdoll = new ModelEntity();
-				ragdoll.SetModel( "models/citizen_props/hotdog01.vmdl" );  
+				ragdoll.SetModel( "models/glizzy.vmdl" );  
 				ragdoll.Position = EyePos + EyeRot.Forward * 40;
 				ragdoll.Rotation = Rotation.LookAt( Vector3.Random.Normal );
 				ragdoll.SetupPhysicsFromModel( PhysicsMotionType.Dynamic, false );
 				ragdoll.PhysicsGroup.Velocity = EyeRot.Forward * 5000;
 				PlaySound( "fard" );
 			}
+			food = food - 0.01;
 		}
+
 
 		public override void OnKilled()
 		{
@@ -83,7 +76,9 @@ namespace MinimalExample
 
 		public override void StartTouch( Entity other )
 		{
-			base.Respawn();
+			//this is what happens when hit by a glizzy
+			food = food + 5.0;
+			//base.Respawn();
 		}
 
 	}
