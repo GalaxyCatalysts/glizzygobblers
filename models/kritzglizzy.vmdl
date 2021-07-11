@@ -37,7 +37,7 @@
 						[
 							{
 								from = "cylinder.vmat"
-								to = "materials/dev/primary_blue.vmat"
+								to = "models/kritzglizzy.vmat"
 							},
 						]
 						use_global_default = false
@@ -166,7 +166,7 @@
 						filename = "models/glizzy.fbx"
 						import_translation = [ 0.0, 0.0, 0.0 ]
 						import_rotation = [ 0.0, 0.0, 0.0 ]
-						import_scale = 1.5
+						import_scale = 1.0
 						align_origin_x_type = "None"
 						align_origin_y_type = "None"
 						align_origin_z_type = "None"

@@ -8,13 +8,15 @@ partial class KritzPower : ItemBase
 	public override Type ItemType => Type.Health;
 	public virtual string WorldModelPath => "models/kritzglizzy.vmdl";
 
-	public override string PickupSound => "medkit_pickup";
+	public override string PickupSound => "glizzykrit";
 
 	public override void Spawn()
 	{
 		base.Spawn();
 
 		SetModel( WorldModelPath );
+
+		Tags.Set( "kritglizzy", true );
 	}
 
 	public override void OnCarryStart( Entity carrier )
@@ -26,7 +28,7 @@ partial class KritzPower : ItemBase
 			PickupTrigger.EnableTouch = false;
 
 			var ply = carrier as MinimalExample.MinimalPlayer;
-			ply.Health += 25;
+			PlaySound( "fard" );
 		}
 	}
 }

@@ -1,12 +1,29 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "base/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/base.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/base.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "base/1.0.0": {
+      "type": "project",
+      "path": "../../base/code/base.csproj",
+      "msbuildProject": "../../base/code/base.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\Addons\\base\\code\\base.csproj"
+      "base >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -36,8 +53,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\Addons\\base\\code\\base.csproj": {
-              "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\Addons\\base\\code\\base.csproj"
+            "D:\\Games\\steamapps\\common\\sbox\\Addons\\base\\code\\base.csproj": {
+              "projectPath": "D:\\Games\\steamapps\\common\\sbox\\Addons\\base\\code\\base.csproj"
             }
           }
         }
@@ -69,16 +86,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\Addons\\base\\code\\base.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\Addons\\base\\code\\base.csproj",
-      "targetGraphs": [
-        "net5.0"
-      ]
-    }
-  ]
+  }
 }

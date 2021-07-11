@@ -18,6 +18,7 @@ partial class ItemBase : BaseCarriable, IRespawnableEntity
 		Weapon,
 		Ammo,
 		Flashlight,
+		Powerup,
 		Other
 	}
 

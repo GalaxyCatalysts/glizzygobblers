@@ -67,6 +67,7 @@ namespace MinimalExample
 				{
 					//TODO: Add critical glizzy
 					var ragdoll = new ModelEntity();
+					ragdoll.Tags.Add( "glizzy" );
 					ragdoll.SetModel( "models/glizzy.vmdl" );  
 					ragdoll.Position = EyePos + EyeRot.Forward * 40;
 					ragdoll.Rotation = Rotation.LookAt( Vector3.Random.Normal );
@@ -121,12 +122,20 @@ namespace MinimalExample
 
 		public override void StartTouch( Entity other )
 		{
-			//this is what happens when hit by a glizzy
-			Log.Info(other);
-			if (IsAlive) {food = food + 5.0;}
-			//base.Respawn();
-			other.Delete();
-			PlaySound( "amongus" );
+			//Detects if entity is a glizzy
+			if ( other.Tags.Has("glizzy")) 
+			{
+				//this is what happens when hit by a glizzy
+				Log.Info( other.Position );
+				if ( IsAlive ) { food = food + 5.0; }
+				//base.Respawn();
+				other.Delete();
+				PlaySound( "amongus" );
+			}
+			if ( other.Tags.Has( "kritglizzy" ) )
+			{
+				PlaySound( "kritzglizzy" );
+			}
 		}
 
 	}
