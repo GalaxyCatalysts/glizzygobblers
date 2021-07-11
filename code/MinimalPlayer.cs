@@ -1,6 +1,8 @@
 ﻿using Sandbox;
 using System;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace MinimalExample
 {
@@ -69,7 +71,7 @@ namespace MinimalExample
 					ragdoll.Position = EyePos + EyeRot.Forward * 40;
 					ragdoll.Rotation = Rotation.LookAt( Vector3.Random.Normal );
 					ragdoll.SetupPhysicsFromModel( PhysicsMotionType.Dynamic, false );
-					ragdoll.PhysicsGroup.Velocity = EyeRot.Forward * 5000;
+					ragdoll.PhysicsGroup.Velocity = EyeRot.Forward * 4000;
 					PlaySound( "fard" );
 				}
 				else if (Input.Pressed( InputButton.Attack1 ) && IsAlive == true){
@@ -80,9 +82,12 @@ namespace MinimalExample
 
 			if ( food <= 0 || food >= 100 )
 			{
-				if ( IsServer && IsAlive )
+				//PlaySound( "death" );
+				if (IsServer == false && IsAlive){ PlaySound( "death" ); }
+				else if ( IsServer && IsAlive )
 				{
 					if (food >= 100){food = 100;}
+					
 					
 					base.OnKilled();
 
@@ -94,7 +99,6 @@ namespace MinimalExample
 
 					PlaySound( "death" );
 				}
-				
 			}
 			else
 			{
@@ -106,18 +110,20 @@ namespace MinimalExample
 		public override void OnKilled()
 		{
 			base.OnKilled();
-			//BecomeRagdollOnClient( Velocity, lastDamage.Flags, lastDamage.Position, lastDamage.Force, GetHitboxBone( lastDamage.HitboxIndex ) );
+
 			EnableDrawing = false;
 			
 			IsAlive = false;
 			
 			food = 50;
+
 		}
 
 		public override void StartTouch( Entity other )
 		{
 			//this is what happens when hit by a glizzy
-			food = food + 5.0;
+			Log.Info(other);
+			if (IsAlive) {food = food + 5.0;}
 			//base.Respawn();
 			other.Delete();
 			PlaySound( "amongus" );
