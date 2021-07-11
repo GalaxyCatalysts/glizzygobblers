@@ -6,16 +6,16 @@ using MinimalExample;
 namespace MinimalExample {
     public class RoundTime : Panel {
 
-        public Label Laabel;
+        public Label TimerLabel;
         public RoundTime()	
         {
             StyleSheet.Load("/ui/RoundTime.scss");
-		    Laabel = Add.Label( "100", "value" );
+		    TimerLabel = Add.Label( "100", "timer" );
         }
-
         public override void Tick()
 	    {
-            Laabel.Text = ( "ass" );
+            var game = Game.Current as MinimalGame;
+            TimerLabel.Text = $"{game.RoundTime}";
 	    }
     }
 }
