@@ -1,4 +1,23 @@
 // 
+// KritzPower : ItemBase 
+// 
+@PointClass editormodel( "models/kritzglizzy.vmdl" ) 
+metadata
+{
+	entity_tool_name = "Kritz Powerup"
+	entity_tool_group = "Kritz"
+	entity_tool_tip = "Kritz Powerup that gives massive damage"
+}
+= gg_kritzpower : ""
+[
+	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
+	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
+	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input SetColor(string) : ""
+]
+
+// 
 // MinimalExample.MinimalGame : Sandbox.Game 
 // 
 @PointClass = glizzygobblers : ""
