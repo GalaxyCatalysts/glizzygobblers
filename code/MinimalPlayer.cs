@@ -73,10 +73,10 @@ namespace MinimalExample
 					ragdoll.Rotation = Rotation.LookAt( Vector3.Random.Normal );
 					ragdoll.SetupPhysicsFromModel( PhysicsMotionType.Dynamic, false );
 					ragdoll.PhysicsGroup.Velocity = EyeRot.Forward * 4000;
-					PlaySound( "fard" );
+					PlaySound( "throw" );
 				}
 				else if (Input.Pressed( InputButton.Attack1 ) && IsAlive == true){
-					PlaySound( "fard" );
+					PlaySound( "throw" );
 				}
 			}
 			
@@ -100,6 +100,7 @@ namespace MinimalExample
 
 					PlaySound( "death" );
 				}
+
 			}
 			else
 			{
@@ -130,7 +131,7 @@ namespace MinimalExample
 				if ( IsAlive ) { food = food + 5.0; }
 				//base.Respawn();
 				other.Delete();
-				PlaySound( "amongus" );
+				PlaySound( "slorp_2" );
 			}
 			if ( other.Tags.Has( "kritglizzy" ) )
 			{
