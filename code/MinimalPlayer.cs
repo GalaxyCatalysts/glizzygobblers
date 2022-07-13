@@ -13,6 +13,9 @@ namespace MinimalExample
 		[Net, Local]
 		public double consumptionRate {get; set; } = 0.05;
 		//double food = 50.0;
+
+		private TimeSince TimeSinceGlizzSpawn;
+
 		public bool IsAlive = true;
 
 		public ClothingContainer Clothing = new();
@@ -83,11 +86,17 @@ namespace MinimalExample
 					//TODO: Add critical glizzy
 					var ragdoll = new ModelEntity();
 					ragdoll.Tags.Add( "glizzy" );
+					TimeSinceGlizzSpawn = 0;
 					ragdoll.SetModel( "models/glizzy.vmdl" );  
 					ragdoll.Position = EyePosition + EyeRotation	.Forward * 40;
 					ragdoll.Rotation = Rotation.LookAt( Vector3.Random.Normal );
 					ragdoll.SetupPhysicsFromModel( PhysicsMotionType.Dynamic, false );
 					ragdoll.PhysicsGroup.Velocity = EyeRotation.Forward * 4000;
+
+					if (TimeSinceGlizzSpawn >= 25.0f) 
+					{
+						ragdoll.Delete();
+					}
 					PlaySound( "throw" );
 				}
 				else if (Input.Pressed( InputButton.PrimaryAttack ) && IsAlive == true){
