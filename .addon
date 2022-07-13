@@ -1,5 +1,14 @@
 {
-	"sharedassets": "*.*",
-	"type": "game",
-	"ident": "catalyst.glizzygobblers"
+  "Title": "Glizzygobblers",
+  "Type": "game",
+  "Org": "local",
+  "Ident": "glizzygobblers",
+  "Schema": 1,
+  "HasAssets": true,
+  "AssetsPath": "",
+  "ResourcePaths": null,
+  "HasCode": true,
+  "CodePath": "code",
+  "RootNamespace": "Sandbox",
+  "Metadata": {}
 }

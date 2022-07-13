@@ -34,7 +34,7 @@ namespace MinimalExample
 			//
 			// Use ThirdPersonCamera (you can make your own Camera for 100% control)
 			//
-			Camera = new FirstPersonCamera();
+			CameraMode = new FirstPersonCamera();
 
 			EnableAllCollisions = true;
 			EnableDrawing = true;
@@ -63,19 +63,19 @@ namespace MinimalExample
 			//
 			if (IsAlive == true) 
 			{
-				if ( IsServer && Input.Pressed( InputButton.Attack1 ) )
+				if ( IsServer && Input.Pressed( InputButton.PrimaryAttack ) )
 				{
 					//TODO: Add critical glizzy
 					var ragdoll = new ModelEntity();
 					ragdoll.Tags.Add( "glizzy" );
 					ragdoll.SetModel( "models/glizzy.vmdl" );  
-					ragdoll.Position = EyePos + EyeRot.Forward * 40;
+					ragdoll.Position = EyePosition + EyeRotation	.Forward * 40;
 					ragdoll.Rotation = Rotation.LookAt( Vector3.Random.Normal );
 					ragdoll.SetupPhysicsFromModel( PhysicsMotionType.Dynamic, false );
-					ragdoll.PhysicsGroup.Velocity = EyeRot.Forward * 4000;
+					ragdoll.PhysicsGroup.Velocity = EyeRotation.Forward * 4000;
 					PlaySound( "throw" );
 				}
-				else if (Input.Pressed( InputButton.Attack1 ) && IsAlive == true){
+				else if (Input.Pressed( InputButton.PrimaryAttack ) && IsAlive == true){
 					PlaySound( "throw" );
 				}
 			}

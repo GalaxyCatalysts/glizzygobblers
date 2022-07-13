@@ -1,8 +1,6 @@
 ﻿using Sandbox;
 
-[Library( "gg_kritzpower", Title = "Kritz Powerup" )]
-[Hammer.EntityTool( "Kritz Powerup", "Kritz", "Kritz Powerup that gives massive damage" )]
-[Hammer.EditorModel( "models/kritzglizzy.vmdl" )]
+[EditorModel( "models/kritzglizzy.vmdl" )]
 partial class KritzPower : ItemBase
 {
 	public override Type ItemType => Type.Health;
