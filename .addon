@@ -1,7 +1,7 @@
 {
-  "Title": "Glizzygobblers",
+  "Title": "Glizzy Gobblers",
   "Type": "game",
-  "Org": "local",
+  "Org": "galcat",
   "Ident": "glizzygobblers",
   "Schema": 1,
   "HasAssets": true,
@@ -10,5 +10,16 @@
   "HasCode": true,
   "CodePath": "code",
   "RootNamespace": "Sandbox",
-  "Metadata": {}
+  "Metadata": {
+    "MaxPlayers": 0,
+    "MinPlayers": 0,
+    "GameNetworkType": "Multiplayer",
+    "MapSelect": "Unrestricted",
+    "MapList": [
+      "facepunch.construct"
+    ],
+    "RankType": "None",
+    "PerMapRanking": false,
+    "LeaderboardType": "None"
+  }
 }
