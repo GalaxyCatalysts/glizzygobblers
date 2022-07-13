@@ -14,6 +14,19 @@ namespace MinimalExample
 		public double consumptionRate {get; set; } = 0.05;
 		//double food = 50.0;
 		public bool IsAlive = true;
+
+		public ClothingContainer Clothing = new();
+
+		public MinimalPlayer() 
+		{
+
+		}
+
+		public MinimalPlayer(Client client) : this() 
+		{
+			Clothing.LoadFromClient(client);
+		}
+
 		public override void Respawn()
 		{
 			IsAlive = true;
@@ -40,6 +53,8 @@ namespace MinimalExample
 			EnableDrawing = true;
 			EnableHideInFirstPerson = true;
 			EnableShadowInFirstPerson = true;
+
+			Clothing.DressEntity(this);
 
 			base.Respawn();
 		}

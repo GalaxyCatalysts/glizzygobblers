@@ -28,7 +28,7 @@ namespace MinimalExample
 		{
 			if ( IsServer )
 			{
-				Log.Info( "My Gamemode Has Created Serverside!" );
+				// Log.Info( "My Gamemode Has Created Serverside!" );
 
 				// Create a HUD entity. This entity is globally networked
 				// and when it is created clientside it creates the actual
@@ -39,8 +39,8 @@ namespace MinimalExample
 
 			if ( IsClient )
 			{
-				Log.Info( "My Gamemode Has Created Clientside!" );
-				//important debug message do not delete don't think about it
+				// Log.Info( "My Gamemode Has Created Clientside!" );
+				//important debug message do not delete don't think about it // hehehehaw
 
 			}
 		}
@@ -52,13 +52,13 @@ namespace MinimalExample
 		{
 			Log.Info("who the fuck loaded in");
 			PlaySound( "glizzy" );
-			// past here please don't change stuff (from isaiah) =====
+			// past here please don't change stuff (from isaiah) ===== FUCK YOU ISAIAH!!!!! I DO WHAT I WANNA!!! - Lokiv
 			base.ClientJoined( client );
 
-			var player = new MinimalPlayer();
-			client.Pawn = player;
-
+			var player = new MinimalPlayer(client);
 			player.Respawn();
+
+			client.Pawn = player;
 		}
 		//[Net]
 		public int RoundTime = 120;
