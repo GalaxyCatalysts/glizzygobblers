@@ -99,9 +99,9 @@ namespace MinimalExample
 					}
 					PlaySound( "throw" );
 				}
-				else if (Input.Pressed( InputButton.PrimaryAttack ) && IsAlive == true){
-					PlaySound( "throw" );
-				}
+				// else if (Input.Pressed( InputButton.PrimaryAttack ) && IsAlive == true){
+				// 	PlaySound( "throw" ); // Why was this?? - Lokiv
+				// }
 			}
 			
 
