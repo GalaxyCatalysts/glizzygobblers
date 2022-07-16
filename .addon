@@ -1,7 +1,7 @@
 {
-  "Title": "Glizzygobblers",
+  "Title": "Glizzy Gobblers",
   "Type": "game",
-  "Org": "local",
+  "Org": "galcat",
   "Ident": "glizzygobblers",
   "Schema": 1,
   "HasAssets": true,
