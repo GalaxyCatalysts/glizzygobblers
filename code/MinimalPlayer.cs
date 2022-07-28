@@ -24,6 +24,8 @@ namespace MinimalExample
 		{
 
 		}
+		
+		private static Random s_Random = new Random();
 
 		public MinimalPlayer(Client client) : this() 
 		{
@@ -92,6 +94,7 @@ namespace MinimalExample
 					ragdoll.Rotation = Rotation.LookAt( Vector3.Random.Normal );
 					ragdoll.SetupPhysicsFromModel( PhysicsMotionType.Dynamic, false );
 					ragdoll.PhysicsGroup.Velocity = EyeRotation.Forward * 4000;
+					Tags.Add("glizzy");
 
 					if (TimeSinceGlizzSpawn >= 25.0f) 
 					{
@@ -107,23 +110,37 @@ namespace MinimalExample
 
 			if ( food <= 0 || food >= 100 )
 			{
-				//PlaySound( "death" );
-				if (IsServer == false && IsAlive){ PlaySound( "death" ); }
-				else if ( IsServer && IsAlive )
+				if ( ConsoleCommands.GlizzyGod == 0 )
 				{
-					if (food >= 100){food = 100;}
+					if (IsServer == false && IsAlive){ PlaySound( "death" ); }
+					else if ( IsServer && IsAlive )
+					{
+						if (food >= 100){food = 100;}
 					
 					
-					base.OnKilled();
+						base.OnKilled();
 
-					EnableDrawing = false;
+						EnableDrawing = false;
 
-					//food = 50;
+						//food = 50;
 
-					IsAlive = false;
+						IsAlive = false;
+						
+						int perCent = s_Random.Next(0, 100);
 
-					PlaySound( "death" );
+						if ( perCent < 2 )
+						{
+							PlaySound( "death" );
+						}
+
+						if ( perCent == 1 )
+						{
+							PlaySound( "amongus" );
+						}
+					}
 				}
+				//PlaySound( "death" );
+				
 
 			}
 			else
