@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sandbox.Reflection</name>
+    </assembly>
+    <members>
+        <member name="T:ExposeAttribute">
+            <summary>
+            If set on a type, it (and its descendants) can be created
+            and manipulated via the TypeLibrary system.
+            
+            Note that this is only useful for our internal libraries because
+            everything in compiled (addons) assemblies is accessible anyway.
+            </summary>
+        </member>
+        <member name="M:Sandbox.Internal.TypeLibrary.GetAttributes``1">
+            <summary>
+            Get all attributes of this type
+            </summary>
+        </member>
+        <member name="M:Sandbox.Internal.TypeLibrary.GetAttribute``1(System.Type)">
+            <summary>
+            Get single attribute of type, from type
+            </summary>
+        </member>
+        <member name="M:Sandbox.Internal.TypeLibrary.GetAttributes``1(System.Type)">
+            <summary>
+            Get all attribute of type, from all types assignable to type
+            </summary>
+        </member>
+        <member name="M:Sandbox.Internal.TypeLibrary.IsAllowedType(System.Type)">
+            <summary>
+            We're allowed to use the type if we know about it
+            </summary>
+        </member>
+        <member name="M:Sandbox.Internal.TypeLibrary.Create(System.String,System.Type,System.Object[])">
+            <summary>
+            Create a type by name
+            </summary>
+        </member>
+        <member name="M:Sandbox.Internal.TypeLibrary.Create``1(System.Type,System.Object[])">
+            <summary>
+            Create type by type
+            </summary>
+        </member>
+        <member name="M:Sandbox.Internal.TypeLibrary.CreateGeneric``1(System.Type,System.Type,System.Object[])">
+            <summary>
+            Create type by type
+            </summary>
+        </member>
+        <member name="F:Sandbox.Internal.TypeLibrary.OnClassName">
+            <summary>
+            Called to populate StringTokens with our custom tokens in c#
+            </summary>
+        </member>
+        <member name="P:Sandbox.Internal.TypeLibrary.Root">
+            <summary>
+            If set then the LoadContext will use this as the root for getting other types. This should
+            be set to the instance of Sandbox.Game, or Sandbox.Tools etc
+            </summary>
+        </member>
+        <member name="P:Sandbox.Internal.TypeLibrary.DebugMode">
+            <summary>
+            If true we'll spam a bunch of logging information. Mainly used for unit testing.
+            </summary>
+        </member>
+        <member name="F:Sandbox.Internal.TypeLibrary.Types">
+            <summary>
+            A list of loaded types.
+            </summary>
+        </member>
+        <member name="F:Sandbox.Internal.TypeLibrary.loadedAssemblies">
+            <summary>
+            A named list of loaded assemblies. This exists so we can unload.
+            </summary>
+        </member>
+        <member name="F:Sandbox.Internal.TypeLibrary.OnAssemblySwap">
+            <summary>
+            Called when a dynamic named assembly is swapped for another. This is the place to collect hotloads etc.
+            </summary>
+        </member>
+        <member name="M:Sandbox.Internal.TypeLibrary.Dispose">
+            <summary>
+            Clean up after ourselves
+            </summary>
+        </member>
+        <member name="M:Sandbox.Internal.TypeLibrary.AddAssembly(System.Reflection.Assembly,System.Boolean)">
+            <summary>
+            Add an assembly yo the library. 
+            If marked as dynamic then all types are added.
+            </summary>
+        </member>
+        <member name="M:Sandbox.Internal.TypeLibrary.RemoveAssembly(System.Reflection.Assembly)">
+            <summary>
+            Remove a specific assembly and all types associated with it
+            </summary>
+        </member>
+        <member name="M:Sandbox.Internal.TypeLibrary.AddAssembly(Sandbox.AssemblyRegistation)">
+            <summary>
+            Add a named assembly, which potentially replaces a previous assembly
+            </summary>
+        </member>
+        <member name="M:Sandbox.Internal.TypeLibrary.Has``1(System.Type)">
+            <summary>
+            Return true if this type contains this attribute
+            </summary>
+        </member>
+        <member name="M:Sandbox.Internal.TypeLibrary.GetStaticMethods``1(System.String,System.String)">
+            <summary>
+            This is used primarily to get GlobalRpcHandler.OnRpc
+            </summary>
+        </member>
+        <member name="P:Sandbox.Internal.TypeLibrary.DynamicAssemblyHash">
+            <summary>
+            This is a hash of loaded assembly names. We can use it to make sure we're using
+            the same code as the server. This is important when it comes to things like decoding
+            network messages and datatables - because if the code is different we're going to
+            get errors, because it could expect different data.
+            </summary>
+        </member>
+        <member name="M:Sandbox.Internal.TypeLibrary.OnAttribute``1(System.Action{``0})">
+            <summary>
+            I don't like this callback, try not to use it.
+            </summary>
+        </member>
+        <member name="T:Sandbox.IMemberAttribute">
+            <summary>
+            When applied to an attribute, which is them applied to a member.. 
+            this will get MemberDescription set on load.
+            </summary>
+        </member>
+        <member name="M:Sandbox.MemberDescription.Create(Sandbox.TypeDescription,System.Reflection.MemberInfo)">
+            <summary>
+            TODO - create MethodDescription?
+            </summary>
+        </member>
+        <member name="P:Sandbox.TypeDescription.Identity">
+            <summary>
+            An integer that represents this type. Based off the class name.
+            </summary>
+        </member>
+        <member name="P:Sandbox.TypeDescription.ClassName">
+            <summary>
+            A string representing this class name. Historically this was provided by [Library( classname )].
+            If no special name is provided, this will be type.Name.
+            </summary>
+        </member>
+        <member name="M:Sandbox.TypeDescription.IsNamed(System.String)">
+            <summary>
+            Rewturns true if this is named the passed name, either through classname, target class name or an alias
+            </summary>
+        </member>
+        <member name="P:Sandbox.AssemblyRegistation.SkipEventsSystem">
+            <summary>
+            When registering assemblies with tools we don't want to 
+            register them with the events system (and possibly others).
+            Setting this to true will skip that.
+            </summary>
+        </member>
+    </members>
+</doc>

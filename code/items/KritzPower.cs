@@ -1,4 +1,6 @@
-﻿using Sandbox;
+﻿using MinimalExample;
+using Sandbox;
+using MinimalPlayer = Sandbox.MinimalPlayer;
 
 [EditorModel( "models/kritzglizzy.vmdl" )]
 partial class KritzPower : ItemBase
@@ -25,8 +27,19 @@ partial class KritzPower : ItemBase
 		{
 			PickupTrigger.EnableTouch = false;
 
-			var ply = carrier as MinimalExample.MinimalPlayer;
+			var ply = carrier as MinimalPlayer;
 			PlaySound( "fard" );
 		}
+	}
+
+    public override void Touch(Entity other)
+    {
+
+        if (other is not MinimalPlayer player)
+            return;
+
+
+		PlaySound("kritzglizzy");
+
 	}
 }

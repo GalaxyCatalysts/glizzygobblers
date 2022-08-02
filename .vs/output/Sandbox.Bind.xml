@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sandbox.Bind</name>
+    </assembly>
+    <members>
+        <member name="P:Sandbox.Bind.BindSystem.Name">
+            <summary>
+            The debug name given to this system (ie Tools, Client, Server)
+            </summary>
+        </member>
+        <member name="P:Sandbox.Bind.BindSystem.ThrottleUpdates">
+            <summary>
+            If true we'll throttle time between link change checks. This should
+            always be enabled in game, for performance reasons.
+            </summary>
+        </member>
+        <member name="P:Sandbox.Bind.BindSystem.CatchExceptions">
+            <summary>
+            If true we'll catch and remove exceptions when testing links instead of
+            propogating them to the Tick call.
+            </summary>
+        </member>
+        <member name="P:Sandbox.Bind.BindSystem.LinkCount">
+            <summary>
+            The current amount of active links
+            </summary>
+        </member>
+        <member name="M:Sandbox.Bind.BindSystem.Tick">
+            <summary>
+            Should be called every frame. Will run through the links and check 
+            for changes, then action those changes. Will also remove dead links.
+            </summary>
+        </member>
+        <member name="M:Sandbox.Bind.BindSystem.Flush">
+            <summary>
+            Call a tick with no timer limits, forcing all pending actions to be actioned
+            </summary>
+        </member>
+        <member name="M:Sandbox.Bind.BindSystem.FindAttributes``1(``0,System.String)">
+            <summary>
+            For this object, with this property, find the property
+            that supplies it and return any attributes set on it.
+            This is useful for editors to allow them to supply the correct
+            editor, without having access to the property.
+            </summary>
+        </member>
+        <member name="T:Sandbox.Bind.Link">
+            <summary>
+            Joins two proxies together, so one can be updated from the other (or both from each other)
+            </summary>
+        </member>
+        <member name="P:Sandbox.Bind.Link.IsValid">
+            <summary>
+            This is updated in tick. Will return false if either binding is invalid. Bindings become
+            invalid if the object is garbage collected or is an IValid and made invalid.
+            </summary>
+        </member>
+        <member name="P:Sandbox.Bind.Link.OneWay">
+            <summary>
+            True if this should only update from left to right.
+            </summary>
+        </member>
+        <member name="P:Sandbox.Bind.Link.Left">
+            <summary>
+            The primary binding. Changes to this value always take priority over the other.
+            </summary>
+        </member>
+        <member name="P:Sandbox.Bind.Link.Right">
+            <summary>
+            The secondary binding, if we're OneWay then this will only ever be written to.
+            </summary>
+        </member>
+        <member name="F:Sandbox.Bind.Link.nextCall">
+            <summary>
+            The next time this link is allowed to check
+            </summary>
+        </member>
+        <member name="M:Sandbox.Bind.Link.Tick(System.Double,Sandbox.Bind.BindSystem)">
+            <summary>
+            Called from manager for each link. 
+            It's this function's job to avoid calling Tick to save performance.
+            </summary>
+        </member>
+        <member name="M:Sandbox.Bind.Link.OnDownstreamChanged(System.Object)">
+            <summary>
+            A value on our value has changed, which has changed our value. Replace both bindings
+            with our value.
+            </summary>
+        </member>
+        <member name="T:Sandbox.Bind.MethodProxy`1">
+            <summary>
+            A proxy where set and get are done via functions
+            </summary>
+        </member>
+        <member name="T:Sandbox.Bind.PropertyProxy">
+            <summary>
+            A proxy wrapped around a PropertyInfo
+            </summary>
+        </member>
+        <member name="T:Sandbox.Bind.Proxy">
+            <summary>
+            Gets and Sets a value from somewhere.
+            </summary>
+        </member>
+        <member name="P:Sandbox.Bind.Proxy.Name">
+            <summary>
+            Debug name for this property
+            </summary>
+        </member>
+        <member name="P:Sandbox.Bind.Proxy.Value">
+            <summary>
+            Get or set the value. N
+            </summary>
+        </member>
+        <member name="P:Sandbox.Bind.Proxy.CanRead">
+            <summary>
+            True if we can get
+            </summary>
+        </member>
+        <member name="P:Sandbox.Bind.Proxy.CanWrite">
+            <summary>
+            True if we can set
+            </summary>
+        </member>
+        <member name="P:Sandbox.Bind.Proxy.IsValid">
+            <summary>
+            Should retrn false if the proxy is now invalid, like if the source object was destroyed.
+            </summary>
+        </member>
+        <member name="T:Sandbox.Bind.Translation">
+            <summary>
+            This isn't ideal, but it does what we want it to do. Kind of.
+            </summary>
+        </member>
+    </members>
+</doc>
