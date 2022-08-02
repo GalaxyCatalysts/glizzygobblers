@@ -30,7 +30,7 @@ partial class MinimalGame : Game
     {
         Log.Info("Game Live");
         GameState = GameStates.Live;
-        StateTimer = 1 * 60;
+        StateTimer = 5 * 60;
 
         FreshStart();
         await WaitStateTimer();
