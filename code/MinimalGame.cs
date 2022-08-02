@@ -1,14 +1,10 @@
-﻿
-using Sandbox;
-using Sandbox.UI.Construct;
-using System;
-using System.IO;
-using System.Threading.Tasks;
+﻿using MinimalExample;
+
 
 //
 // You don't need to put things in a namespace, but it doesn't hurt.
 //
-namespace MinimalExample
+namespace Sandbox
 {
 
 	/// <summary>
@@ -22,8 +18,10 @@ namespace MinimalExample
 	/// as your game addon. If it isn't then we won't be able to find it.
 	/// </summary>
 	[Library( "glizzygobblers" )]
-	public partial class MinimalGame : Sandbox.Game
+	partial class MinimalGame : Game
 	{
+        [Net]
+        MinimalHud Hud { get; set; }
 		public MinimalGame()
 		{
 			if ( IsServer )
@@ -34,7 +32,8 @@ namespace MinimalExample
 				// and when it is created clientside it creates the actual
 				// UI panels. You don't have to create your HUD via an entity,
 				// this just feels like a nice neat way to do it.
-				new MinimalHudEntity();
+                Hud = new MinimalHud();
+                _ = GameLoopAsync();
 			}
 
 			if ( IsClient )
@@ -59,7 +58,16 @@ namespace MinimalExample
 			player.Respawn();
 
 			client.Pawn = player;
+
 		}
+
+		public override void OnKilled(Client client, Entity pawn)
+        {
+            base.OnKilled(client, pawn);
+
+           
+        }
+
 		//[Net]
 		public int RoundTime = 120;
 	}
