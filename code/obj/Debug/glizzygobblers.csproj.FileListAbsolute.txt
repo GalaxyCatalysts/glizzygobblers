@@ -1,0 +1,14 @@
+c:\users\ryan\documents\galcat.glizzygobblers\.vs\output\glizzygobblers.xml
+c:\users\ryan\documents\galcat.glizzygobblers\.vs\output\glizzygobblers.deps.json
+c:\users\ryan\documents\galcat.glizzygobblers\.vs\output\glizzygobblers.dll
+c:\users\ryan\documents\galcat.glizzygobblers\.vs\output\glizzygobblers.pdb
+c:\users\ryan\documents\galcat.glizzygobblers\code\obj\Debug\glizzygobblers.csproj.AssemblyReference.cache
+c:\users\ryan\documents\galcat.glizzygobblers\code\obj\Debug\glizzygobblers.GeneratedMSBuildEditorConfig.editorconfig
+c:\users\ryan\documents\galcat.glizzygobblers\code\obj\Debug\glizzygobblers.AssemblyInfoInputs.cache
+c:\users\ryan\documents\galcat.glizzygobblers\code\obj\Debug\glizzygobblers.AssemblyInfo.cs
+c:\users\ryan\documents\galcat.glizzygobblers\code\obj\Debug\glizzygobblers.csproj.CoreCompileInputs.cache
+c:\users\ryan\documents\galcat.glizzygobblers\code\obj\Debug\glizzygobblers.csproj.CopyComplete
+c:\users\ryan\documents\galcat.glizzygobblers\code\obj\Debug\glizzygobblers.dll
+c:\users\ryan\documents\galcat.glizzygobblers\code\obj\Debug\refint\glizzygobblers.dll
+c:\users\ryan\documents\galcat.glizzygobblers\code\obj\Debug\glizzygobblers.pdb
+c:\users\ryan\documents\galcat.glizzygobblers\code\obj\Debug\ref\glizzygobblers.dll

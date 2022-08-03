@@ -16,9 +16,9 @@ namespace MinimalExample {
 
         public override void Tick()
 	    {
-            var player = Local.Pawn as MinimalPlayer;
+            var player = Local.Pawn as Sandbox.MinimalPlayer;
             if ( player == null ) return;
-            Label.Text = $"{player.food = (int) player.food}";
+            Label.Text = $"{(int) player.food}";
 	    }
     }
 }
